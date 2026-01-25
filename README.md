@@ -61,15 +61,15 @@
 ## 项目结构
 
 ```
-SpringBootDemo/
+TeeStudio/
 ├── pom.xml                          # Maven 配置
 ├── Dockerfile                       # Docker 构建文件
 ├── README.md                        # 项目说明
 └── src/
     └── main/
         ├── java/
-        │   └── com/example/springbootdemo/
-        │       ├── SpringBootDemoApplication.java   # 启动类
+        │   └── com/example/TeeStudio/
+        │       ├── TeeStudioApplication.java   # 启动类
         │       └── controller/
         │           └── HelloController.java         # API 控制器
         └── resources/
