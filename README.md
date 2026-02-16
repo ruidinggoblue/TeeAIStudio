@@ -1,6 +1,6 @@
 # Spring Boot Demo
 
-一个简单的 Spring Boot 演示项目，提供 REST API 服务。
+一个简单的 Spring Boot 演示项目，提供 `GET /hello` API 返回 "hello world"。
 
 ## 环境要求
 
@@ -34,19 +34,19 @@
    # 返回: Welcome to Spring Boot Demo
 
    curl http://localhost:8080/hello
-   # 返回: Hello from Spring Boot
+   # 返回: hello world
    ```
 
 ### 方式二：Docker 运行
 
 1. **构建镜像**
    ```bash
-   docker build -t springbootdemo .
+   docker build -t teestudio .
    ```
 
 2. **运行容器**
    ```bash
-   docker run -p 8080:8080 springbootdemo
+   docker run -p 8080:8080 teestudio
    ```
 
 3. **测试 API**
@@ -112,6 +112,7 @@ TeeStudio/
 │   │   └── deploy-ecs.yml           # GitHub Actions 部署工作流
 │   └── cloudformation/
 │       └── ecs-fargate-alb.yml      # AWS CloudFormation 模板
+├── task-definition.json                        # 项目说明
 └── src/
     └── main/
         ├── java/
