@@ -1,0 +1,31 @@
+
+{
+  "family": "teestudio-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::905418360147:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "teestudio",
+      "image": "905418360147.dkr.ecr.us-west-1.amazonaws.com/teestudio:latest",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/teestudio",
+          "awslogs-region": "us-west-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
