@@ -13,7 +13,7 @@
 Target topology (from architecture diagram):
 
 ```mermaid
-flowchart TB
+flowchart TBD
   subgraph client [Client]
     React[React Design Lab]
   end
