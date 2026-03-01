@@ -6,12 +6,12 @@ on:
       - main
 
 env:
-  AWS_REGION: us-east-1
-  ECR_REPOSITORY: springboot-demo
-  ECS_CLUSTER: springboot-demo-cluster
-  ECS_SERVICE: springboot-demo-service
-  ECS_TASK_DEFINITION: springboot-demo-task
-  CONTAINER_NAME: springboot-demo
+  AWS_REGION: us-west-1
+  ECR_REPOSITORY: teestudio
+  ECS_CLUSTER: teestudio-cluster
+  ECS_SERVICE: teestudio-service
+  ECS_TASK_DEFINITION: teestudio-task
+  CONTAINER_NAME: teestudio
   CONTAINER_PORT: 8080
 
 jobs:
@@ -84,7 +84,7 @@ jobs:
           ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          STACK_NAME="springboot-demo-stack"
+          STACK_NAME="teestudio-stack"
           CONTAINER_IMAGE="$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           
           # Determine if HTTPS should be enabled
@@ -115,7 +115,7 @@ jobs:
       - name: Get Stack Outputs
         id: get-outputs
         run: |
-          STACK_NAME="springboot-demo-stack"
+          STACK_NAME="teestudio-stack"
           ALB_DNS=$(aws cloudformation describe-stacks \
             --stack-name $STACK_NAME \
             --query 'Stacks[0].Outputs[?OutputKey==`ALBDNSName`].OutputValue' \

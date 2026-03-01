@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'ECS Fargate with ALB - Spring Boot Demo Application'
+Description: 'ECS Fargate with ALB - TeeStudio Application'
 
 Parameters:
   ContainerImage:
@@ -8,7 +8,7 @@ Parameters:
 
   ContainerName:
     Type: String
-    Default: springboot-demo
+    Default: teestudio
     Description: Name of the container
 
   ContainerPort:
@@ -18,17 +18,17 @@ Parameters:
 
   ClusterName:
     Type: String
-    Default: springboot-demo-cluster
+    Default: teestudio-cluster
     Description: Name of the ECS cluster
 
   ServiceName:
     Type: String
-    Default: springboot-demo-service
+    Default: teestudio-service
     Description: Name of the ECS service
 
   TaskDefinitionName:
     Type: String
-    Default: springboot-demo-task
+    Default: teestudio-task
     Description: Name of the task definition
 
   DesiredCount:
